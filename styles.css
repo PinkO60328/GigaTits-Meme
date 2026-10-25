@@ -370,9 +370,20 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + var(--nav-top) + 16px); }
   padding-top: calc(var(--nav-h) + var(--nav-top) + 24px);
   color: var(--white);
   background:
-    radial-gradient(55% 65% at 76% 70%, rgba(255, 211, 90, .5), rgba(255, 211, 90, 0) 62%),
-    radial-gradient(45% 45% at 8% 6%, rgba(255, 255, 255, .16), rgba(255, 255, 255, 0) 70%),
-    linear-gradient(165deg, var(--royal) 0%, var(--blue) 50%, #1455D9 100%);
+    radial-gradient(50% 55% at 78% 62%, rgba(255, 255, 255, .28), transparent 58%),
+    radial-gradient(40% 45% at 12% 18%, rgba(255, 90, 200, .45), transparent 70%),
+    radial-gradient(35% 40% at 88% 12%, rgba(90, 220, 255, .35), transparent 65%),
+    conic-gradient(from 210deg at 72% 58%,
+      #ff2d95 0deg,
+      #ff6b2d 45deg,
+      #ffd35a 90deg,
+      #5dff8a 135deg,
+      #3ad0ff 180deg,
+      #7a5cff 225deg,
+      #ff2d95 270deg,
+      #ff6b2d 315deg,
+      #ff2d95 360deg),
+    linear-gradient(165deg, #7a1fa2 0%, #e91e8c 42%, #2468ef 100%);
 }
 
 .hero__decor {
@@ -389,7 +400,7 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + var(--nav-top) + 16px); }
   width: 190vmax;
   height: 190vmax;
   margin: -95vmax 0 0 -95vmax;
-  background: repeating-conic-gradient(from 0deg, rgba(255, 255, 255, .11) 0deg 5deg, rgba(255, 255, 255, 0) 5deg 15deg);
+  background: repeating-conic-gradient(from 0deg, rgba(255,255,255,.16) 0deg 4deg, rgba(255,45,149,.12) 4deg 8deg, rgba(255,211,90,.1) 8deg 12deg, rgba(58,208,255,.1) 12deg 16deg, transparent 16deg 22deg);
   -webkit-mask-image: radial-gradient(circle, #000 0%, rgba(0, 0, 0, .7) 22%, transparent 48%);
   mask-image: radial-gradient(circle, #000 0%, rgba(0, 0, 0, .7) 22%, transparent 48%);
 }
@@ -410,7 +421,7 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + var(--nav-top) + 16px); }
   aspect-ratio: 1;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 245, 229, .95) 0%, rgba(255, 211, 90, .85) 30%, rgba(255, 211, 90, .25) 52%, rgba(255, 211, 90, 0) 70%);
+  background: radial-gradient(circle, rgba(255, 245, 255, .9) 0%, rgba(255, 105, 180, .75) 28%, rgba(255, 211, 90, .35) 52%, rgba(58, 208, 255, 0) 72%);
 }
 
 .hero__cape-wrap {
@@ -423,7 +434,7 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + var(--nav-top) + 16px); }
 .hero__cape {
   width: 100%;
   height: 100%;
-  background: linear-gradient(115deg, #ff4a5f 0%, var(--red) 45%, #b81d33 100%);
+  background: linear-gradient(115deg, #ff6ec7 0%, #e91e8c 40%, #7a1fa2 100%);
   clip-path: polygon(14% 100%, 30% 44%, 52% 22%, 78% 6%, 100% 0%, 100% 100%);
   transform-origin: 100% 100%;
   opacity: .9;
