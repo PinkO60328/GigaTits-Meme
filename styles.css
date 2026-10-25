@@ -4,9 +4,9 @@
    ========================================================= */
 
 :root {
-  --blue: #E91E8C;
-  --navy: #2A1240;
-  --royal: #FF2D95;
+  --blue: #1455D9;
+  --navy: #101D49;
+  --royal: #2468EF;
   --red: #E72E45;
   --gold: #FFD35A;
   --cream: #FFF5E5;
@@ -372,7 +372,7 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + var(--nav-top) + 16px); }
   background:
     radial-gradient(55% 65% at 76% 70%, rgba(255, 211, 90, .5), rgba(255, 211, 90, 0) 62%),
     radial-gradient(45% 45% at 8% 6%, rgba(255, 255, 255, .16), rgba(255, 255, 255, 0) 70%),
-    linear-gradient(165deg, var(--royal) 0%, var(--blue) 50%, #B0156A 100%);
+    linear-gradient(165deg, var(--royal) 0%, var(--blue) 50%, #1455D9 100%);
 }
 
 .hero__decor {
