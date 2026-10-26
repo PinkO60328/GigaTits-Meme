@@ -11,11 +11,11 @@ const SITE_CONFIG = {
   TOKEN_NAME: "Giga Tits",
   TOKEN_SYMBOL: "GIGATITS",
   CHAIN: "Solana",
-  CONTRACT_ADDRESS: "CommingSoon",
+  CONTRACT_ADDRESS: "ABp2bT8ovFYYY8etNQmJauRDXgk3tYkt2jpmGqZSpump",
 
   X_URL: "https://x.com/Giga_Tits",
-  BUY_URL: "#",
-  CHART_URL: "https://dexscreener.com/solana/CommingSoon",
+  BUY_URL: "https://pump.fun/coin/ABp2bT8ovFYYY8etNQmJauRDXgk3tYkt2jpmGqZSpump",
+  CHART_URL: "https://dexscreener.com/solana/ABp2bT8ovFYYY8etNQmJauRDXgk3tYkt2jpmGqZSpump",
 
   // Placeholder value used before launch. While CONTRACT_ADDRESS equals this,
   // the "pending launch" notes stay visible and Buy CTAs stay soft-disabled.
