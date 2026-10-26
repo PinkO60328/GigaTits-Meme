@@ -595,15 +595,6 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + var(--nav-top) + 16px); }
   animation: float 7s ease-in-out 1.3s infinite;
 }
 
-.hero__burst {
-  --size: clamp(92px, 8vw, 150px);
-  position: absolute;
-  z-index: 2;
-  left: 2%;
-  top: 14%;
-  font-size: clamp(1rem, 1.25vw, 1.5rem);
-  animation: pop-in .6s var(--ease-pop) 1s both;
-}
 
 /* Ticker band */
 .ticker {
@@ -1535,7 +1526,6 @@ section[id] { scroll-margin-top: calc(var(--nav-h) + var(--nav-top) + 16px); }
   .hero__ctas { justify-content: center; }
   .hero__art { margin-top: 8px; margin-right: 0; }
   .hero__float { width: min(100%, 620px); }
-  .hero__burst { left: 0; top: 10%; }
 
   .hero__rays { left: 50%; top: 72%; }
   .hero__sun { left: 50%; top: 70%; width: 120vw; }
