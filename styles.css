@@ -1839,6 +1839,33 @@ html.intro-skip #intro {
   transition: opacity 0.25s ease;
 }
 
+.intro__progress {
+  width: min(280px, 72vw);
+  height: 10px;
+  margin-top: 0.35rem;
+  border-radius: 999px;
+  background: rgba(16, 29, 73, 0.45);
+  border: 2px solid rgba(255, 211, 90, 0.55);
+  box-shadow:
+    0 0 18px rgba(233, 30, 140, 0.35),
+    inset 0 1px 3px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+.intro__progress-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ff2d95 0%, #ff6ec7 35%, #ffd35a 100%);
+  box-shadow: 0 0 12px rgba(255, 211, 90, 0.75);
+  will-change: width;
+}
+
+.intro.is-converging .intro__progress {
+  opacity: 0.55;
+  transition: opacity 0.25s ease;
+}
+
 @keyframes intro-spin {
   to { transform: rotate(360deg); }
 }

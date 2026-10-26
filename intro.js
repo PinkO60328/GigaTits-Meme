@@ -26,9 +26,12 @@
     "assets/flyers/16.jpg",
   ];
 
+  const INTRO_MS = 5000;
   const intro = document.getElementById("intro");
   const stage = document.getElementById("intro-flyers");
   const startBtn = document.getElementById("intro-start");
+  const progressEl = document.getElementById("intro-progress");
+  const progressFill = document.getElementById("intro-progress-fill");
   if (!intro || !stage || !startBtn) return;
 
   function alreadySeen() {
@@ -69,6 +72,9 @@
   let rafId = 0;
   let converging = false;
   let lastTs = 0;
+  let progressRaf = 0;
+  let progressStart = 0;
+  let autoTriggered = false;
 
   function rand(min, max) {
     return min + Math.random() * (max - min);
@@ -207,9 +213,24 @@
     rafId = requestAnimationFrame(tick);
   }
 
+  function stopProgress() {
+    if (progressRaf) {
+      cancelAnimationFrame(progressRaf);
+      progressRaf = 0;
+    }
+  }
+
+  function setProgress(pct) {
+    const p = Math.max(0, Math.min(100, pct));
+    if (progressFill) progressFill.style.width = p + "%";
+    if (progressEl) progressEl.setAttribute("aria-valuenow", String(Math.round(p)));
+  }
+
   function startConverge(e) {
     if (converging) return;
     converging = true;
+    stopProgress();
+    setProgress(100);
     if (e) e.preventDefault();
     startBtn.disabled = true;
     startBtn.classList.add("is-sucking");
@@ -220,10 +241,26 @@
     }, 3200);
   }
 
-  buildFlyers();
-  if (reduceMotion) {
-    // Still show flyers but slower; START works the same
+  function tickProgress(ts) {
+    if (converging) return;
+    if (!progressStart) progressStart = ts;
+    const elapsed = ts - progressStart;
+    const pct = (elapsed / INTRO_MS) * 100;
+    setProgress(pct);
+    if (elapsed >= INTRO_MS) {
+      setProgress(100);
+      progressRaf = 0;
+      if (!converging && !autoTriggered) {
+        autoTriggered = true;
+        startConverge();
+      }
+      return;
+    }
+    progressRaf = requestAnimationFrame(tickProgress);
   }
+
+  buildFlyers();
   rafId = requestAnimationFrame(tick);
+  progressRaf = requestAnimationFrame(tickProgress);
   startBtn.addEventListener("click", startConverge);
 })();
