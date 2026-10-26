@@ -84,7 +84,7 @@
     const w = window.innerWidth;
     const h = window.innerHeight;
     srcs.forEach((src, i) => {
-      const size = isMobile ? rand(64, 96) : rand(88, 132);
+      const size = isMobile ? rand(110, 150) : rand(160, 200);
       const el = document.createElement("div");
       el.className = "intro__flyer";
       el.style.width = size + "px";
